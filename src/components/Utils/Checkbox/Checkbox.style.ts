@@ -7,19 +7,26 @@ export const FieldWrapper = styled.div`
 `;
 
 export const CustomCheckbox = styled.div`
+  align-items: center;
   background: ${({ theme }) => theme.colors.white1};
   border: 1px solid ${({ theme }) => theme.colors.white3};
   border-radius: ${({ theme }) => theme.borderRadius};
-  display: block;
+  display: flex;
   height: 3rem;
+  justify-content: center;
   transition: all 0.2s ease-in-out;
   width: 3rem;
+
+  svg {
+    display: none;
+  }
 `;
 
 export const HiddenCheckbox = styled.input`
   border: 0;
   height: 1px;
   margin: -1px;
+  outline: none;
   overflow: hidden;
   padding: 0;
   position: absolute;
@@ -34,6 +41,10 @@ export const HiddenCheckbox = styled.input`
   &:checked + ${CustomCheckbox} {
     background-color: ${({ theme }) => theme.colors.primary1};
     border: 1px solid ${({ theme }) => theme.colors.primary1};
+
+    svg {
+      display: block;
+    }
   }
 
   &:focus + ${CustomCheckbox} {

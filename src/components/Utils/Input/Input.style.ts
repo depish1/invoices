@@ -41,11 +41,3 @@ export const StyledInput = styled.input<IStyledInputProps>`
     border-bottom: 2px solid ${({ theme }) => theme.colors.dark3};
   }
 `;
-export const StyledCheckbox = styled.input`
-  height: 2rem;
-  width: 2rem;
-
-  &:hover {
-    border: 1px solid ${({ theme }) => theme.colors.primary3};
-  }
-`;

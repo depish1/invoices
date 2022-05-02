@@ -1,6 +1,6 @@
 import { Path, UseFormRegister } from 'react-hook-form';
 
-import { FieldWrapper, StyledCheckbox, StyledError, StyledInput, StyledLabel } from 'components/Utils/Input/Input.style';
+import { FieldWrapper, StyledError, StyledInput, StyledLabel } from 'components/Utils/Input/Input.style';
 
 interface IInputProps<T> {
   type: EInputType;

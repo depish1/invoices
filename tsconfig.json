@@ -19,7 +19,8 @@
     "lib": [
       "dom",
       "dom.iterable",
-      "esnext"
+      "esnext",
+      "es2017",
     ],
     "types": [
       "jest",

@@ -34,3 +34,7 @@ export const theme = {
     formElement: 'rgba(0, 0, 0, 0.1) -4px 9px 25px -6px',
   },
 };
+
+export type ThemeType = typeof theme;
+
+export type ThemeColorsType = typeof theme.colors[keyof typeof theme.colors];
