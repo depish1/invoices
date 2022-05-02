@@ -6,13 +6,14 @@ export const StyledWrapper = styled.div`
   gap: 2rem;
   line-height: 3rem;
   max-width: 500px;
-  padding: 4rem;
+  padding: 3rem;
   position: relative;
   width: 100%;
 
   &::before {
     background: transparent;
     border-left: 4px solid ${({ theme }) => theme.colors.primary1};
+    border-radius: ${({ theme }) => theme.borderRadius};
     border-top: 4px solid ${({ theme }) => theme.colors.primary1};
     content: '';
     display: block;
@@ -26,6 +27,7 @@ export const StyledWrapper = styled.div`
   &::after {
     background: transparent;
     border-bottom: 4px solid ${({ theme }) => theme.colors.primary1};
+    border-radius: ${({ theme }) => theme.borderRadius};
     border-right: 4px solid ${({ theme }) => theme.colors.primary1};
     bottom: 0rem;
     content: '';

@@ -1,24 +1,24 @@
 import styled from 'styled-components';
 
 interface IStyledButtonProps {
-  isFullWidth: boolean;
+  fullWidth: boolean;
 }
 
 export const StyledButton = styled.button<IStyledButtonProps>`
   background: ${({ theme }) => theme.colors.primary1};
   border: none;
   border-radius: ${({ theme }) => theme.borderRadius};
-  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   color: ${({ theme }) => theme.colors.dark2};
   cursor: pointer;
   display: block;
-  font-size: ${({ theme }) => theme.fontSizes.m};
+  font-size: ${({ theme }) => theme.fontSizes.s};
   font-weight: 600;
-  padding: 1rem 2rem;
+  padding: 1.5rem 2rem;
   transition: all 0.4s ease-in-out;
-  width: ${({ isFullWidth }) => (isFullWidth ? '100%' : 'fit-content')};
+  width: ${({ fullWidth }) => (fullWidth ? '100%' : 'fit-content')};
 
   &:hover {
     background: ${({ theme }) => theme.colors.primary2};
+    box-shadow: ${({ theme }) => theme.boxShadows.formElement};
   }
 `;
