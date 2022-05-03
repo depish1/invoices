@@ -1,8 +1,13 @@
 import { SubmitHandler, useForm } from 'react-hook-form';
+import { useDispatch } from 'react-redux';
+import { useNavigate } from 'react-router';
 
+import { EViewType } from 'enums/EViewType';
 import { Form } from 'components/Home/SignInForm/SignInForm.style';
 import Button from 'components/Utils/Button/Button';
 import Input, { EInputType } from 'components/Utils/Input/Input';
+
+import { signin } from 'store/auth/operations';
 
 interface ISignInFormValues {
   [key: string]: string;
@@ -11,10 +16,18 @@ interface ISignInFormValues {
 }
 
 const SignInForm = () => {
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
   const { register, handleSubmit } = useForm<ISignInFormValues>();
 
-  const onSubmit: SubmitHandler<ISignInFormValues> = data => {
-    alert(JSON.stringify(data));
+  const onSubmit: SubmitHandler<ISignInFormValues> = async data => {
+    try {
+      const xd = dispatch(signin(data));
+      console.log('xd', xd);
+      navigate(`/${EViewType.INVOICES_LIST}`);
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   return (

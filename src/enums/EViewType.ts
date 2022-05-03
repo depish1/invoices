@@ -1,5 +1,4 @@
 export enum EViewType {
-  HOME = 'HOME',
-  SIGN_UP = 'signup',
-  SIGN_IN = 'signin',
+  HOME = 'home',
+  INVOICES_LIST = 'invoices-list',
 }

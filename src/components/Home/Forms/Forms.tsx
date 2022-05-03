@@ -1,7 +1,7 @@
 import { FormsWrapper, SectionWrapper } from 'components/Home/Forms/Forms.style';
 import RODO from 'components/Home/RODO/RODO';
 import SignInForm from 'components/Home/SignInForm/SignInForm';
-import SignOutForm from 'components/Home/SignOutForm/SignOutForm';
+import SignUpForm from 'components/Home/SignUpForm/SignUpForm';
 import Tabs from 'components/Home/Tabs/Tabs';
 
 export enum EFormType {
@@ -23,7 +23,7 @@ const tabsConfig = [
     type: EFormType.SIGN_OUT,
     renderTabContent: (key: string) => (
       <SectionWrapper key={key}>
-        <SignOutForm />
+        <SignUpForm />
       </SectionWrapper>
     ),
     text: 'Rejestracja',
