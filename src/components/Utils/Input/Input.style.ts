@@ -17,15 +17,15 @@ export const StyledLabel = styled.label`
 `;
 
 export const StyledError = styled.span`
-  color: ${({ theme }) => theme.colors.error};
-  font-size: ${({ theme }) => theme.fontSizes.xs};
+  color: ${({ theme }) => theme.colors.error2};
+  font-size: ${({ theme }) => theme.fontSizes.s};
   font-weight: 400;
 `;
 
 export const StyledInput = styled.input<IStyledInputProps>`
   background-color: ${({ theme }) => theme.colors.white1};
   border: none;
-  border-bottom: 2px solid ${({ isError, theme }) => (isError ? theme.colors.error : theme.colors.white2)};
+  border-bottom: 2px solid ${({ isError, theme }) => (isError ? theme.colors.error2 : theme.colors.white2)};
   border-radius: ${({ theme }) => theme.borderRadius};
   font-size: ${({ theme }) => theme.fontSizes.s};
   outline: none;

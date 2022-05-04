@@ -3,6 +3,7 @@ import { Path, UseFormRegister } from 'react-hook-form';
 import { FieldWrapper, StyledError, StyledInput, StyledLabel } from 'components/Utils/Input/Input.style';
 
 interface IInputProps<T> {
+  disabled?: boolean;
   type: EInputType;
   label: Path<T>;
   register: UseFormRegister<T>;
@@ -17,10 +18,10 @@ export enum EInputType {
   CHECKBOX = 'checkbox',
 }
 
-const Input = <T extends Record<string, unknown>>({ error, type, label, register, required }: IInputProps<T>) => (
+const Input = <T extends Record<string, unknown>>({ disabled, error, type, label, register, required }: IInputProps<T>) => (
   <FieldWrapper>
     <StyledLabel>{label}</StyledLabel>
-    <StyledInput isError={!!error} {...register(label, { required })} type={type} />
+    <StyledInput disabled={disabled} isError={!!error} {...register(label, { required })} type={type} />
     {error && <StyledError>{error}</StyledError>}
   </FieldWrapper>
 );

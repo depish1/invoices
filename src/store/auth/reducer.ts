@@ -7,7 +7,6 @@ const initialState: IAuthState = {
   user: null,
   isLoading: false,
   error: '',
-  needVerification: false,
 };
 
 const auth = produce((draftState: IAuthState, action: AuthActionsType) => {
@@ -24,9 +23,6 @@ const auth = produce((draftState: IAuthState, action: AuthActionsType) => {
       return draftState;
     case 'SET_ERROR':
       draftState.error = action.payload;
-      return draftState;
-    case 'NEED_VERIFICATION':
-      draftState.needVerification = true;
       return draftState;
     default:
       return draftState;

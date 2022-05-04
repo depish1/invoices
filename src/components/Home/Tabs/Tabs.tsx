@@ -1,31 +1,31 @@
-import { useState } from 'react';
-
+import { EFormType } from 'components/Home/Forms/Forms';
 import { Tab, TabsWrapper } from 'components/Home/Tabs/Tabs.style';
+import { useTabsContext } from 'components/Home/hooks/useTabsContext';
 
-type TabsConfigType<T> = {
-  type: T;
+type TabsConfigType = {
+  type: EFormType;
   renderTabContent: (key: string) => JSX.Element;
   text: string;
 };
 
-interface ITabsProps<T> {
-  defaultTab: T;
-  tabsConfig: TabsConfigType<T>[];
+interface ITabsProps {
+  defaultTab: EFormType;
+  tabsConfig: TabsConfigType[];
 }
 
-const Tabs = <T extends string>({ tabsConfig, defaultTab }: ITabsProps<T>) => {
-  const [selectedTab, setSelectedTab] = useState<T>(defaultTab);
+const Tabs = ({ tabsConfig }: ITabsProps) => {
+  const { activeTab, changeTab } = useTabsContext();
 
   return (
     <>
       <TabsWrapper>
         {tabsConfig.map(({ type, text }) => (
-          <Tab key={type} isActive={selectedTab === type} onClick={() => setSelectedTab(type)}>
+          <Tab key={type} isActive={activeTab === type} onClick={() => changeTab(type)}>
             {text}
           </Tab>
         ))}
       </TabsWrapper>
-      {tabsConfig.map(({ renderTabContent, type }) => selectedTab === type && renderTabContent(type))}
+      {tabsConfig.map(({ renderTabContent, type }) => activeTab === type && renderTabContent(type))}
     </>
   );
 };

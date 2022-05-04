@@ -10,13 +10,13 @@ export const theme = {
     white3: '#dee2e6',
     white4: '#ccd0d4',
     primary1: '#ffee32',
-    primary2: '#ffd500',
+    primary2: '#ffdd00',
     primary3: '#fdc500',
     secondary1: '#c86bfa',
     secondary2: '#5c0099',
     secondary3: '#3d0066',
-    error1: '#bf211e',
-    error2: '#850a0a',
+    error1: '#ff7878',
+    error2: '#d62d20',
   },
 
   fontSizes: {
@@ -31,7 +31,7 @@ export const theme = {
   borderRadius: '0.5rem',
 
   boxShadows: {
-    formElement: 'rgba(0, 0, 0, 0.1) -4px 9px 25px -6px',
+    formElement: 'rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;',
   },
 };
 

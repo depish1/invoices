@@ -9,7 +9,6 @@ export interface IAuthState {
   user: IUser | null;
   isLoading: boolean;
   error: string;
-  needVerification: boolean;
 }
 
 export interface ISignUpData {

@@ -1,15 +1,25 @@
 import styled from 'styled-components';
 
+interface ICheckboxProps {
+  isError: boolean;
+}
+
 export const FieldWrapper = styled.div`
   display: flex;
   flex-direction: column;
   gap: 0.6rem;
 `;
 
-export const CustomCheckbox = styled.div`
+export const StyledError = styled.span`
+  color: ${({ theme }) => theme.colors.error2};
+  font-size: ${({ theme }) => theme.fontSizes.s};
+  font-weight: 400;
+`;
+
+export const CustomCheckbox = styled.div<ICheckboxProps>`
   align-items: center;
   background: ${({ theme }) => theme.colors.white1};
-  border: 1px solid ${({ theme }) => theme.colors.white3};
+  border: 1px solid ${({ isError, theme }) => (isError ? theme.colors.error2 : theme.colors.white3)};
   border-radius: ${({ theme }) => theme.borderRadius};
   display: flex;
   height: 3rem;

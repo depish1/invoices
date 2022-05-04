@@ -1,4 +1,5 @@
 import { FormsWrapper, SectionWrapper } from 'components/Home/Forms/Forms.style';
+import { TabsContextProvider } from 'components/Home/hooks/useTabsContext';
 import RODO from 'components/Home/RODO/RODO';
 import SignInForm from 'components/Home/SignInForm/SignInForm';
 import SignUpForm from 'components/Home/SignUpForm/SignUpForm';
@@ -32,7 +33,9 @@ const tabsConfig = [
 
 const Forms = () => (
   <FormsWrapper>
-    <Tabs defaultTab={EFormType.SIGN_IN} tabsConfig={tabsConfig} />
+    <TabsContextProvider defaultTab={EFormType.SIGN_IN}>
+      <Tabs defaultTab={EFormType.SIGN_IN} tabsConfig={tabsConfig} />
+    </TabsContextProvider>
     <SectionWrapper>
       <RODO />
     </SectionWrapper>
